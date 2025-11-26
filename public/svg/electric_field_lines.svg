@@ -1,0 +1,17 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .line { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 2s linear forwards; }
+    #line-2 { animation-delay: 0.2s; } #line-3 { animation-delay: 0.4s; } #line-4 { animation-delay: 0.6s; } #line-5 { animation-delay: 0.8s; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+  </style>
+  <rect width="100%" height="100%" fill="white"/>
+  <g id="Charges"><g transform="translate(150, 150)"><circle r="30" fill="red"/><text x="0" y="8" font-size="24" font-weight="bold" fill="white" text-anchor="middle">+</text></g><g transform="translate(350, 150)"><circle r="30" fill="blue"/><text x="0" y="8" font-size="24" font-weight="bold" fill="white" text-anchor="middle">-</text></g></g>
+  <g id="Field-Lines" fill="none" stroke="black" stroke-width="2" marker-end="url(#arrow)">
+    <path id="line-1" class="line" d="M 180 150 C 250 100, 300 100, 320 150"/>
+    <path id="line-2" class="line" d="M 180 150 C 250 50, 300 50, 320 150"/>
+    <path id="line-3" class="line" d="M 180 150 L 320 150"/>
+    <path id="line-4" class="line" d="M 180 150 C 250 200, 300 200, 320 150"/>
+    <path id="line-5" class="line" d="M 180 150 C 250 250, 300 250, 320 150"/>
+  </g>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="black"/></marker></defs>
+</svg>

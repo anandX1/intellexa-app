@@ -1,0 +1,227 @@
+[
+  {
+    "id": "ch1_charge_01_hook",
+    "subtopic": "Introduction",
+    "narration_url": "/content/physics/chapter1/audio/ch1_charge_01_hook.wav",
+    "visual_type": "title_card",
+    "content": "Topic 1: Electric Charge"
+  },
+  {
+    "id": "ch1_charge_02_concept",
+    "subtopic": "Definition",
+    "narration_url": "/content/physics/chapter1/audio/ch1_charge_02_concept.wav",
+    "visual_type": "animated_text",
+    "content": "Electric Charge: The physical property of matter that causes it to experience a force when placed in an electromagnetic field. Types: Positive (+) and Negative (-)."
+  },
+  {
+    "id": "ch1_charge_03_analogy",
+    "subtopic": "Interaction",
+    "narration_url": "/content/physics/chapter1/audio/ch1_charge_03_analogy.wav",
+    "visual_type": "animated_svg",
+    "svg_url": "/svg/charge_interaction.svg",
+    "content": "Like charges repel. Opposite charges attract."
+  },
+  {
+    "id": "ch1_charge_04_test",
+    "subtopic": "Unit",
+    "narration_url": "/content/physics/chapter1/audio/ch1_charge_04_test.wav",
+    "visual_type": "question",
+    "content": {
+      "question": "What is the SI unit of electric charge?",
+      "answer": "The Coulomb (C)"
+    }
+  },
+  {
+    "id": "ch1_coulomb_01_hook",
+    "subtopic": "Introduction",
+    "narration_url": "/content/physics/chapter1/audio/ch1_coulomb_01_hook.wav",
+    "visual_type": "title_card",
+    "content": "Topic 2: Coulomb's Law"
+  },
+  {
+    "id": "ch1_coulomb_02_concept",
+    "subtopic": "Statement",
+    "narration_url": "/content/physics/chapter1/audio/ch1_coulomb_02_concept.wav",
+    "visual_type": "animated_text",
+    "content": "The force between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance between them."
+  },
+  {
+    "id": "ch1_coulomb_03_analogy",
+    "subtopic": "Inverse Square Law",
+    "narration_url": "/content/physics/chapter1/audio/ch1_coulomb_03_analogy.wav",
+    "visual_type": "animated_text",
+    "content": "Think about two magnets. The force weakens very quickly with distance. Double the distance, and the force becomes four times weaker."
+  },
+  {
+    "id": "ch1_coulomb_04_formula",
+    "subtopic": "Formula",
+    "narration_url": "/content/physics/chapter1/audio/ch1_coulomb_04_formula.wav",
+    "visual_type": "formula",
+    "content": "F = k * (|q1 * q2|) / r^2"
+  },
+  {
+    "id": "ch1_coulomb_05_numerical",
+    "subtopic": "Example",
+    "narration_url": "/content/physics/chapter1/audio/ch1_coulomb_05_numerical.wav",
+    "visual_type": "animated_text",
+    "content": "Example: Two charges of +1 Coulomb, 1 meter apart, exert a force of 9,000,000,000 Newtons! This shows 1 Coulomb is a very large unit of charge."
+  },
+  {
+    "id": "ch1_coulomb_06_test",
+    "subtopic": "Vector Nature",
+    "narration_url": "/content/physics/chapter1/audio/ch1_coulomb_06_test.wav",
+    "visual_type": "question",
+    "content": {
+      "question": "Is the force from Coulomb's Law a vector or a scalar?",
+      "answer": "Vector. It has both magnitude and direction."
+    }
+  },
+  {
+    "id": "ch1_props_01_hook",
+    "subtopic": "Introduction",
+    "narration_url": "/content/physics/chapter1/audio/ch1_props_01_hook.wav",
+    "visual_type": "title_card",
+    "content": "Topic 3: Properties of Charge"
+  },
+  {
+    "id": "ch1_props_02_quantization",
+    "subtopic": "Quantization",
+    "narration_url": "/content/physics/chapter1/audio/ch1_props_02_quantization.wav",
+    "visual_type": "formula",
+    "content": "Q = n * e (where 'n' is an integer)"
+  },
+  {
+    "id": "ch1_props_03_quant_analogy",
+    "subtopic": "Analogy",
+    "narration_url": "/content/physics/chapter1/audio/ch1_props_03_quant_analogy.wav",
+    "visual_type": "animated_text",
+    "content": "You can't have half a person in a room, only whole numbers. For charge, the fundamental unit is the electron's charge, 'e'."
+  },
+  {
+    "id": "ch1_props_04_conservation",
+    "subtopic": "Conservation",
+    "narration_url": "/content/physics/chapter1/audio/ch1_props_04_conservation.wav",
+    "visual_type": "animated_text",
+    "content": "In any isolated system, you cannot create or destroy net charge. It can only be transferred."
+  },
+  {
+    "id": "ch1_props_05_conserv_analogy",
+    "subtopic": "Analogy",
+    "narration_url": "/content/physics/chapter1/audio/ch1_props_05_conserv_analogy.wav",
+    "visual_type": "animated_text",
+    "content": "Like money in a closed system. You can give it to a friend, but the total amount remains the same."
+  },
+  {
+    "id": "ch1_efield_01_hook",
+    "subtopic": "Introduction",
+    "narration_url": "/content/physics/chapter1/audio/ch1_efield_01_hook.wav",
+    "visual_type": "title_card",
+    "content": "Topic 4: The Electric Field"
+  },
+  {
+    "id": "ch1_efield_02_concept",
+    "subtopic": "Definition",
+    "narration_url": "/content/physics/chapter1/audio/ch1_efield_02_concept.wav",
+    "visual_type": "formula",
+    "content": "E = F / q₀"
+  },
+  {
+    "id": "ch1_efield_03_analogy",
+    "subtopic": "Analogy",
+    "narration_url": "/content/physics/chapter1/audio/ch1_efield_03_analogy.wav",
+    "visual_type": "animated_text",
+    "content": "A charge creates an invisible 'field of influence' around it, like a perfume or an agarbatti filling a room."
+  },
+  {
+    "id": "ch1_efield_04_fieldlines",
+    "subtopic": "Field Lines",
+    "narration_url": "/content/physics/chapter1/audio/ch1_efield_04_fieldlines.wav",
+    "visual_type": "animated_svg",
+    "svg_url": "/svg/electric_field_lines.svg",
+    "content": "Imaginary lines that show the path a positive test charge would take. They never cross."
+  },
+  {
+    "id": "ch1_efield_05_test",
+    "subtopic": "Direction",
+    "narration_url": "/content/physics/chapter1/audio/ch1_efield_05_test.wav",
+    "visual_type": "question",
+    "content": {
+      "question": "What is the direction of the electric field?",
+      "answer": "Away from positive, towards negative."
+    }
+  },
+  {
+    "id": "ch1_dipole_01_concept",
+    "subtopic": "Electric Dipole",
+    "narration_url": "/content/physics/chapter1/audio/ch1_dipole_01_concept.wav",
+    "visual_type": "static_diagram",
+    "svg_url": "/svg/dipole_diagram.svg",
+    "content": "A pair of equal and opposite charges separated by a very small distance. Many molecules, like water, are dipoles."
+  },
+  {
+    "id": "ch1_dipole_02_torque_analogy",
+    "subtopic": "Torque on a Dipole",
+    "narration_url": "/content/physics/chapter1/audio/ch1_dipole_02_torque_analogy.wav",
+    "visual_type": "animated_svg",
+    "svg_url": "/svg/torque_on_dipole.svg",
+    "content": "Like turning a steering wheel with two hands, the electric field creates a 'torque' that tries to align the dipole."
+  },
+  {
+    "id": "ch1_flux_01_concept",
+    "subtopic": "Electric Flux",
+    "narration_url": "/content/physics/chapter1/audio/ch1_flux_01_concept.wav",
+    "visual_type": "animated_text",
+    "content": "Electric Flux: A measure of the total number of electric field lines passing through a given surface area."
+  },
+  {
+    "id": "ch1_flux_02_analogy",
+    "subtopic": "Analogy",
+    "narration_url": "/content/physics/chapter1/audio/ch1_flux_02_analogy.wav",
+    "visual_type": "animated_text",
+    "content": "Imagine holding a bucket in the rain. The amount of 'rain' (field lines) passing through the opening is the flux."
+  },
+  {
+    "id": "ch1_gauss_01_hook",
+    "subtopic": "Introduction",
+    "narration_url": "/content/physics/chapter1/audio/ch1_gauss_01_hook.wav",
+    "visual_type": "title_card",
+    "content": "Topic 5: Gauss's Law"
+  },
+  {
+    "id": "ch1_gauss_02_concept",
+    "subtopic": "Statement",
+    "narration_url": "/content/physics/chapter1/audio/ch1_gauss_02_concept.wav",
+    "visual_type": "formula",
+    "content": "Φ_E = Q_enclosed / ε₀"
+  },
+  {
+    "id": "ch1_gauss_03_analogy",
+    "subtopic": "Analogy",
+    "narration_url": "/content/physics/chapter1/audio/ch1_gauss_03_analogy.wav",
+    "visual_type": "animated_text",
+    "content": "Imagine a light bulb in a closed box. The total light hitting the walls only depends on the bulb's brightness (the charge), not the box's shape."
+  },
+  {
+    "id": "ch1_gauss_04_app_wire",
+    "subtopic": "Application: Wire",
+    "narration_url": "/content/physics/chapter1/audio/ch1_gauss_04_app_wire.wav",
+    "visual_type": "static_diagram",
+    "svg_url": "/svg/gauss_wire.svg",
+    "content": "For a long charged wire, the electric field decreases as 1/r."
+  },
+  {
+    "id": "ch1_gauss_05_app_sheet",
+    "subtopic": "Application: Sheet",
+    "narration_url": "/content/physics/chapter1/audio/ch1_gauss_05_app_sheet.wav",
+    "visual_type": "static_diagram",
+    "svg_url": "/svg/gauss_sheet.svg",
+    "content": "For a large, flat sheet of charge, the electric field is constant."
+  },
+  {
+    "id": "ch1_summary_01_conclusion",
+    "subtopic": "Conclusion",
+    "narration_url": "/content/physics/chapter1/audio/ch1_summary_01_conclusion.wav",
+    "visual_type": "title_card",
+    "content": "Chapter 1 Complete!"
+  }
+]

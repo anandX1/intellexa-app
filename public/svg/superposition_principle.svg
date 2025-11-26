@@ -1,0 +1,16 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    #Vector-F1, #Vector-F2, #Parallelogram-Lines, #Vector-F-Net { opacity: 0; animation: fadeIn 1s ease forwards; }
+    #Vector-F2 { animation-delay: 1s; }
+    #Parallelogram-Lines { animation-delay: 2s; }
+    #Vector-F-Net { animation-delay: 3s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  </style>
+  <rect width="100%" height="100%" fill="white"/>
+  <g id="Charges"><g transform="translate(250, 200)"><circle r="25" fill="red"/><text x="0" y="8" font-size="24" font-weight="bold" fill="white" text-anchor="middle">+</text></g><g transform="translate(100, 200)"><circle r="25" fill="red"/><text x="0" y="8" font-size="24" font-weight="bold" fill="white" text-anchor="middle">+</text></g><g transform="translate(250, 50)"><circle r="25" fill="red"/><text x="0" y="8" font-size="24" font-weight="bold" fill="white" text-anchor="middle">+</text></g></g>
+  <g id="Vector-F1" transform="translate(250, 200)"><line x1="0" y1="0" x2="100" y2="0" stroke="black" stroke-width="3" marker-end="url(#arrow-black)"/><text x="50" y="-10" font-size="16">F1</text></g>
+  <g id="Vector-F2" transform="translate(250, 200)"><line x1="0" y1="0" x2="0" y2="-100" stroke="black" stroke-width="3" marker-end="url(#arrow-black)"/><text x="-20" y="-50" font-size="16">F2</text></g>
+  <g id="Parallelogram-Lines"><line x1="350" y1="200" x2="350" y2="100" stroke="black" stroke-width="2" stroke-dasharray="4"/><line x1="250" y1="100" x2="350" y2="100" stroke="black" stroke-width="2" stroke-dasharray="4"/></g>
+  <g id="Vector-F-Net" transform="translate(250, 200)"><line x1="0" y1="0" x2="100" y2="-100" stroke="blue" stroke-width="3" marker-end="url(#arrow-blue)"/><text x="60" y="-40" font-size="16" fill="blue">F-Net</text></g>
+  <defs><marker id="arrow-black" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="black"/></marker><marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="blue"/></marker></defs>
+</svg>

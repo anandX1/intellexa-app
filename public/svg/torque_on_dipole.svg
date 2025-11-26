@@ -1,0 +1,26 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    #Dipole { animation: rotateDipole 4s ease-in-out forwards; transform-origin: center; }
+    #Forces { opacity: 0; animation: fadeForces 4s ease-in-out forwards; }
+    @keyframes rotateDipole {
+      0%, 25% { transform: rotate(45deg); }
+      75%, 100% { transform: rotate(0deg); }
+    }
+    @keyframes fadeForces {
+      25% { opacity: 1; }
+      75%, 100% { opacity: 0; }
+    }
+  </style>
+  <rect width="100%" height="100%" fill="white"/>
+  <g id="Field-Lines" transform="translate(0, 150)"><line x1="25" y1="-50" x2="475" y2="-50" stroke="lightblue" stroke-width="2" marker-end="url(#arrow-blue)"/><line x1="25" y1="0" x2="475" y2="0" stroke="lightblue" stroke-width="2" marker-end="url(#arrow-blue)"/><line x1="25" y1="50" x2="475" y2="50" stroke="lightblue" stroke-width="2" marker-end="url(#arrow-blue)"/></g>
+  <g id="Dipole" transform="translate(250, 150)">
+    <line x1="-40" y1="0" x2="40" y2="0" stroke="black" stroke-width="3"/>
+    <circle cx="-40" cy="0" r="15" fill="blue"/><text x="-40" y="6" font-size="16" font-weight="bold" fill="white" text-anchor="middle">-</text>
+    <circle cx="40" cy="0" r="15" fill="red"/><text x="40" y="6" font-size="16" font-weight="bold" fill="white" text-anchor="middle">+</text>
+  </g>
+  <g id="Forces" transform="translate(250, 150)">
+      <g transform="rotate(45) translate(28, -28)"><line x1="0" y1="0" x2="50" y2="0" stroke="black" stroke-width="2" marker-end="url(#arrow-black)"/></g>
+      <g transform="rotate(45) translate(-28, 28)"><line x1="0" y1="0" x2="-50" y2="0" stroke="black" stroke-width="2" marker-end="url(#arrow-black)"/></g>
+  </g>
+  <defs><marker id="arrow-blue" markerWidth="8" markerHeight="6" refX="2" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="lightblue"/></marker><marker id="arrow-black" markerWidth="8" markerHeight="6" refX="2" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="black"/></marker></defs>
+</svg>

@@ -1,0 +1,25 @@
+<svg width="1000" height="500" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    #Attraction_Scene { animation: scene-one 4s linear infinite; }
+    #Repulsion_Scene { animation: scene-two 4s linear infinite; }
+    @keyframes scene-one { 0%, 49.9% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    @keyframes scene-two { 0%, 50% { opacity: 0; } 50.1%, 100% { opacity: 1; } }
+    #Attraction_Positive { animation: attract-left 2s ease-in-out infinite alternate; }
+    #Attraction_Negative { animation: attract-right 2s ease-in-out infinite alternate; }
+    @keyframes attract-left { from { transform: translateX(100px); } to { transform: translateX(150px); } }
+    @keyframes attract-right { from { transform: translateX(400px); } to { transform: translateX(350px); } }
+    #Repulsion_Positive_1 { animation: repel-up 2s ease-in-out infinite alternate; animation-delay: 2s; }
+    #Repulsion_Positive_2 { animation: repel-down 2s ease-in-out infinite alternate; animation-delay: 2s; }
+    @keyframes repel-up { from { transform: translateY(150px); } to { transform: translateY(120px); } }
+    @keyframes repel-down { from { transform: translateY(150px); } to { transform: translateY(180px); } }
+  </style>
+  <rect width="100%" height="100%" fill="white"/>
+  <g id="Attraction_Scene">
+    <g id="Attraction_Positive" transform="translate(0, 150)"><circle r="30" fill="red"/><text x="0" y="8" font-size="24" font-weight="bold" fill="white" text-anchor="middle">+</text></g>
+    <g id="Attraction_Negative" transform="translate(0, 150)"><circle r="30" fill="blue"/><text x="0" y="8" font-size="24" font-weight="bold" fill="white" text-anchor="middle">-</text></g>
+  </g>
+  <g id="Repulsion_Scene">
+    <g id="Repulsion_Positive_1" transform="translate(250, 0)"><circle r="30" fill="red"/><text x="0" y="8" font-size="24" font-weight="bold" fill="white" text-anchor="middle">+</text></g>
+    <g id="Repulsion_Positive_2" transform="translate(250, 0)"><circle r="30" fill="red"/><text x="0" y="8" font-size="24" font-weight="bold" fill="white" text-anchor="middle">+</text></g>
+  </g>
+</svg>
