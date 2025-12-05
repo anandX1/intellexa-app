@@ -10,6 +10,7 @@ import { AtSymbolIcon, LockClosedIcon, UserIcon, RocketLaunchIcon, BookOpenIcon,
 
 export default function LoginPage() {
   const supabase = createClient(); // The new, correct client instance
+  const bypassAuth = process.env.NEXT_PUBLIC_BYPASS_AUTH === 'true';
   const [isLoginView, setIsLoginView] = useState(true);
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -23,17 +24,28 @@ export default function LoginPage() {
     setMessage('');
     setIsLoading(true);
 
+    // Development/testing bypass: if NEXT_PUBLIC_BYPASS_AUTH is enabled,
+    // skip real Supabase auth and navigate straight to the dashboard.
+    if (bypassAuth) {
+      router.push('/dashboard');
+      setIsLoading(false);
+      return;
+    }
+
     if (isLoginView) {
       // Handle Sign In
       const { error } = await supabase.auth.signInWithPassword({ email, password });
       if (error) {
-        if (error.message.includes('Email not confirmed')) {
+        // Helpful message for missing envs
+        if (error.message && error.message.startsWith('Supabase not configured')) {
+          setMessage(error.message + '. Check .env.local or Vercel environment variables.');
+        } else if (error.message.includes('Email not confirmed')) {
           setMessage('Please check your inbox and confirm your email address first.');
         } else {
           setMessage(error.message);
         }
       } else {
-        // router.refresh(); // This helps ensure the session is updated for the middleware
+        router.refresh(); // This helps ensure the session is updated for the middleware
         router.push('/dashboard');
       }
     } else {
@@ -43,17 +55,21 @@ export default function LoginPage() {
         setIsLoading(false);
         return;
       }
-      const { error } = await supabase.auth.signUp({ 
-        email, 
-        password, 
+      const { error } = await supabase.auth.signUp({
+        email,
+        password,
         options: {
           data: { full_name: fullName }
-        } 
+        }
       });
       if (error) {
+        if (error.message && error.message.startsWith('Supabase not configured')) {
+          setMessage(error.message + '. Ensure NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are set.');
+        } else {
           setMessage(error.message);
+        }
       } else {
-          setMessage('Sign up successful! Please check your email to verify your account.');
+        setMessage('Sign up successful! Please check your email to verify your account.');
       }
     }
     setIsLoading(false);

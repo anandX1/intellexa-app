@@ -44,6 +44,7 @@ export default function LessonPlayer() {
   const [isTextboxActive, setIsTextboxActive] = useState(false);
   const [typedQuestion, setTypedQuestion] = useState('');
   const recognitionRef = useRef<any>(null);
+  const inputRef = useRef<HTMLInputElement | null>(null);
 
   // --- 1. DATA & PROGRESS FETCHING ---
   useEffect(() => {
@@ -159,9 +160,20 @@ export default function LessonPlayer() {
   }, []);
 
   const handleRaiseHand = () => {
-    if (isListening || isAIResponding) return;
-    if (soundRef.current && soundRef.current.playing()) soundRef.current.pause();
+    if (isListening) return;
+    // If AI is responding but stuck, allow the user to interrupt and open the textbox.
+    if (isAIResponding) setIsAIResponding(false);
+    try {
+      // Pause any narration safely; some Howl builds may not expose playing() the same way.
+      if (soundRef.current && typeof soundRef.current.pause === 'function') {
+        soundRef.current.pause();
+      }
+    } catch (err) {
+      console.debug('Could not pause audio safely', err);
+    }
     setIsTextboxActive(true);
+    // Focus the input shortly after it's rendered so users can type immediately.
+    setTimeout(() => inputRef.current?.focus(), 50);
   };
   const handleMicClick = () => {
     if (isListening) recognitionRef.current?.stop();
@@ -240,10 +252,12 @@ export default function LessonPlayer() {
                 <div className="relative">
                   <input
                     type="text"
+                    ref={inputRef}
                     value={typedQuestion}
                     onChange={(e) => setTypedQuestion(e.target.value)}
                     placeholder="Or type your question..."
                     className="w-72 bg-slate-700 p-4 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400"
+                    autoComplete="off"
                   />
                   <button type="button" onClick={handleMicClick} className="absolute right-2 top-1/2 -translate-y-1/2 p-2 rounded-full bg-slate-600 hover:bg-slate-500">
                     <MicrophoneIcon className={`h-6 w-6 transition-colors ${isListening ? 'text-green-400' : 'text-white'}`} />
@@ -254,7 +268,7 @@ export default function LessonPlayer() {
             )}
           </AnimatePresence>
           <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={handlePrevStep} className="flex items-center gap-2 px-6 py-4 bg-slate-700 rounded-full shadow-lg font-semibold"><ArrowUturnLeftIcon className="h-6 w-6" />Previous</motion.button>
-          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={handleRaiseHand} disabled={isAIResponding} className="flex items-center gap-3 px-6 py-4 bg-yellow-600 rounded-full shadow-lg font-semibold disabled:opacity-50">
+          <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} onClick={handleRaiseHand} disabled={isListening} className="flex items-center gap-3 px-6 py-4 bg-yellow-600 rounded-full shadow-lg font-semibold disabled:opacity-50">
             {isAIResponding ? "Thinking..." : (<><HandRaisedIcon className="h-6 w-6" />Raise Hand</>)}
           </motion.button>
         </div>
